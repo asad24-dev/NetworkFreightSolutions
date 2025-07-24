@@ -5,7 +5,7 @@
   "main": "clean-server.js",
   "scripts": {
     "build": "npm install && npx puppeteer browsers install chrome",
-    "start": "node index.js",
+    "start": "npm start",
     "dev": "nodemon clean-server.js"
   },
   "dependencies": {
