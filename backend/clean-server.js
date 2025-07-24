@@ -70,8 +70,7 @@ app.post('/api/track-scrape', async (req, res) => {
                 '--no-first-run',
                 '--no-default-browser-check',
                 '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-            ],
-            executablePath: '/opt/render/.cache/puppeteer/chrome/linux-121.0.6167.85/chrome-linux64/chrome'
+            ]
         });
 
         const page = await browser.newPage();
