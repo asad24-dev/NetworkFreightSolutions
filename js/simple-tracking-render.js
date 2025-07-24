@@ -6,7 +6,7 @@
 class SimpleTrackingSystem {
     constructor() {
         // API Configuration - Update this with your Render URL
-        this.API_BASE_URL = 'https://your-app-name.onrender.com'; // UPDATE THIS!
+        this.API_BASE_URL = 'https://networkfreightsolutions.onrender.com'; // UPDATE THIS!
         this.initializeEventListeners();
     }
 

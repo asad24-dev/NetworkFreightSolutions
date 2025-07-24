@@ -8,7 +8,7 @@ class SimpleTrackingSystem {
         // API Configuration - Update this with your Render URL when deploying
         this.API_BASE_URL = window.location.origin.includes('localhost') 
             ? 'http://localhost:3000' // Use explicit localhost URL for local development
-            : 'https://your-app-name.onrender.com'; // UPDATE THIS with your Render URL!
+            : 'https://networkfreightsolutions.onrender.com'; // UPDATE THIS with your Render URL!
         
         this.initializeEventListeners();
         
