@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>NFS&mdash;Logistics - Track Your Shipment</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="icon" href="images/logon.png" type="image/png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700">
+<link rel="stylesheet" href="fonts/icomoon/style.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+<link rel="stylesheet" href="css/aos.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/tracking-new.css">
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="200">
+
+<div class="site-mobile-menu site-navbar-target">
+<div class="site-mobile-menu-header">
+<div class="site-mobile-menu-close mt-3">
+<span class="icon-close2 js-menu-toggle"></span>
+</div>
+</div>
+<div class="site-mobile-menu-body"></div>
+</div>
+
+<header class="site-navbar py-3 js-site-navbar site-navbar-target" role="banner" id="site-navbar">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-11 col-xl-2 site-logo">
+<h1 class="mb-0"><a href="index.html" class="text-white"><img src="images/logon.png" width="250px"></a></h1>
+</div>
+<div class="col-12 col-md-10 d-none d-xl-block">
+<nav class="site-navigation position-relative text-right" role="navigation">
+<ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+<li><a href="index.html#section-home" class="nav-link">Home</a></li>
+<li><a href="index.html#section-about" class="nav-link">About Us</a></li>
+<li><a href="index.html#section-services" class="nav-link">Services</a></li>
+<li><a href="index.html#section-industries" class="nav-link">Industries</a></li>
+<li><a href="tracking.html" class="nav-link active">Track</a></li>
+<li><a href="index.html#section-contact" class="nav-link">Contact</a></li>
+</ul>
+</nav>
+</div>
+<div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu h3"></span></a></div>
+</div>
+</div>
+</header>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center justify-content-center text-center">
+            <div class="col-md-8">
+                <div class="hero-content">
+                    <h1>Track Your Shipment</h1>
+                    <p>Enter your tracking number provided by NFS Logistics to get real-time shipment information.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tracking Section -->
+<div class="tracking-section">
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8 col-lg-6 d-flex justify-content-center">
+                <div class="shipment-type-selector card shadow rounded px-4 py-4 mb-4 w-100" style="max-width: 420px; background: #fff; border: 1px solid #e9ecef;">
+                    <div class="text-center mb-3">
+                        <label for="shipment-type" class="form-label" style="font-size: 1.2rem; font-weight: 600; color: #2d2d2d; letter-spacing: 0.5px;">Select Shipment Type</label>
+                    </div>
+                    <select id="shipment-type" class="air-shipment-container" style="font-size: 1.1rem; border-radius: 8px; border: 1px solid #ced4da; padding: 0.6rem 1rem;">
+                        <option value="none">-- Please select --</option>
+                        <option value="air">Air Shipment</option>
+                        <option value="sea">Sea Shipment</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="air-shipment-container" style="display: none;">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="tracking-card">
+                        <div class="tracking-header">
+                            <h2><i class="icon-search"></i> Track Your Shipment</h2>
+                            <p>Enter your tracking number below</p>
+                        </div>
+                        <form id="tracking-form" class="tracking-form">
+                            <div class="input-group">
+                                <input type="text" 
+                                       id="order-number"
+                                       name="number"
+                                       class="form-control tracking-input" 
+                                       placeholder="Enter your AWB/tracking number (e.g., 17604571744)"
+                                       required>
+                                <button type="submit" class="btn-track" id="track-btn">
+                                    <span class="btn-text">Track Shipment</span>
+                                    <span class="btn-loader" style="display: none;">
+                                        <i class="icon-spin"></i> Tracking...
+                                    </span>
+                                </button>
+                            </div>
+                            <small class="form-text">Enter the AWB number provided by NFS Logistics</small>
+                            <!-- Optional customer info for your records -->
+                            <div class="customer-info mt-3" style="display: none;">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="text" 
+                                               id="customer-name" 
+                                               class="form-control" 
+                                               placeholder="Your name (optional)">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" 
+                                               id="customer-email" 
+                                               class="form-control" 
+                                               placeholder="Your email (optional)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-2">
+                                <small><a href="#" id="show-customer-info">Add your details for tracking history</a></small>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="row justify-content-center mt-4" id="results-container" style="display: none;">
+                <div class="col-md-10">
+                    <div class="tracking-results">
+                        <!-- Order Information Card -->
+                        <div class="result-card order-info-card">
+                            <h3><i class="icon-package"></i> Order Information</h3>
+                            <div class="order-details" id="order-details">
+                                <!-- Will be populated dynamically -->
+                            </div>
+                        </div>
+                        <!-- Shipment Status Card -->
+                        <div class="result-card status-card">
+                            <h3><i class="icon-truck"></i> Shipment Status</h3>
+                            <div class="status-info" id="status-info">
+                                <!-- Will be populated dynamically -->
+                            </div>
+                        </div>
+                        <!-- Tracking Timeline -->
+                        <div class="result-card timeline-card">
+                            <h3><i class="icon-clock"></i> Tracking Timeline</h3>
+                            <div class="tracking-timeline" id="tracking-timeline">
+                                <!-- Will be populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error Section -->
+            <div class="row justify-content-center mt-4" id="error-container" style="display: none;">
+                <div class="col-md-8">
+                    <div class="error-card">
+                        <div class="error-content">
+                            <i class="icon-warning"></i>
+                            <h3>Order Not Found</h3>
+                            <p id="error-message">We couldn't find an order with that number. Please check your order number and try again.</p>
+                            <div class="error-help">
+                                <h4>Need Help?</h4>
+                                <ul>
+                                    <li>Make sure you've entered the complete order number</li>
+                                    <li>Order numbers are in the format: NFS-YYYY-XXXXXX</li>
+                                    <li>Contact our support team if you continue to have issues</li>
+                                </ul>
+                                <a href="index.html#section-contact" class="btn-contact">Contact Support</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sea shipment placeholder (hidden for now) -->
+        <div id="sea-shipment-container" style="display: none;"></div>
+    </div>
+</div>
+
+<footer class="site-footer">
+<div class="container">
+<div class="row">
+<div class="col-md-9">
+<div class="row">
+<div class="col-md-5 mr-auto">
+<h2 class="footer-heading mb-4">About Us</h2>
+<p>NFS Logistics is an International Freight Network of first class Air and Sea Freight Specialists with agents in all main airports/seaports worldwide.</p>
+</div>
+<div class="col-md-3">
+<h2 class="footer-heading mb-4">Quick Links</h2>
+<ul class="list-unstyled">
+<li><a href="#">About Us</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">Testimonials</a></li>
+<li><a href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="col-md-3">
+<h2 class="footer-heading mb-4">Follow Us</h2>
+<a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+<a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+<a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+<a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<h2 class="footer-heading mb-4">Subscribe Newsletter</h2>
+<form action="#" method="post">
+<div class="input-group mb-3">
+<input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+<div class="input-group-append">
+<button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<div class="row pt-5 mt-5 text-center">
+<div class="col-md-12">
+<div class="border-top pt-5">
+<p>
+
+Copyright &copy; All rights reserved 
+
+</p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/jquery.countdown.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/main.js"></script>
+<script src="js/simple-tracking.js"></script>
+<script>
+// Shipment type selector logic
+document.addEventListener('DOMContentLoaded', function() {
+    var selector = document.getElementById('shipment-type');
+    var airContainer = document.getElementById('air-shipment-container');
+    var seaContainer = document.getElementById('sea-shipment-container');
+    if (!selector) return;
+    selector.addEventListener('change', function() {
+        if (selector.value === 'air') {
+            airContainer.style.display = 'block';
+            seaContainer.style.display = 'none';
+        } else if (selector.value === 'sea') {
+            airContainer.style.display = 'none';
+            seaContainer.style.display = 'block';
+        } else {
+            airContainer.style.display = 'none';
+            seaContainer.style.display = 'none';
+        }
+    });
+    // Hide both by default
+    airContainer.style.display = 'none';
+    seaContainer.style.display = 'none';
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const selectorCard = document.querySelector('.shipment-type-selector');
+    const shipmentType = document.getElementById('shipment-type');
+    const airContainer = document.getElementById('air-shipment-container');
+
+    shipmentType.addEventListener('change', function() {
+        if (shipmentType.value === 'air') {
+            selectorCard.style.display = 'none';
+            airContainer.style.display = 'block';
+        } else if (shipmentType.value === 'sea') {
+            selectorCard.style.display = 'none';
+            airContainer.style.display = 'none';
+            // You can show a sea shipment form here in the future
+        } else {
+            selectorCard.style.display = '';
+            airContainer.style.display = 'none';
+        }
+    });
+});
+</script>
+
+</body>
+</html>
