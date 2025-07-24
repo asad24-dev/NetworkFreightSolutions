@@ -50,6 +50,5 @@ coverage/
 *.tsbuildinfo
 
 # Misc
-package-lock.json
 yarn.lock
 .pnpm-lock.yaml
