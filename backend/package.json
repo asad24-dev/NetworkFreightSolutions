@@ -4,8 +4,8 @@
   "description": "Track-trace API server for NFS Logistics freight tracking",
   "main": "clean-server.js",
   "scripts": {
-    "start": "node clean-server.js",
-    "postinstall": "npx puppeteer browsers install chrome",
+    "build": "npm install && npx puppeteer browsers install chrome",
+    "start": "node index.js",
     "dev": "nodemon clean-server.js"
   },
   "dependencies": {
